@@ -1,0 +1,376 @@
+<!-- page structure --> 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio Website || Daniel J. Berg</title>
+        <link rel="stylesheet" href="style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    </head>
+    <body>
+
+        <canvas id = "rain-canvas" aria-hidden = "true"></canvas>
+        <div class = "lightning" aria-hidden = "true"></div>
+        <!-- rain animation -->
+        <header>
+            <a href="#home" class="logo"><span>D</span>aniel.</a>
+            <ul class="navlist">
+                <li class="nav-brand"><a href="#home" class="sidebar-logo"><span>D</span>aniel.</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div id="menu-icon" class="bx bx-menu" aria-label="Open menu" role="button" tabindex="0"></div>
+        </header>
+
+        <section id="home" class="home">
+            <div class="home-content">
+                <h1>Hi! I'm Daniel Berg,</h1>
+
+                <div class="change-text">
+                    <h3>I'm a <span class="auto-type"></span></h3>
+                    </div>
+                        <p>
+                        Building powerful software and innovative applications, I specialize in full-stack development, cloud computing, and AI-driven solutions. 
+                        I’m driven to create projects that matter and to become one of Arizona’s top software engineers.
+                        </p>
+
+                    <div class="btn-box">
+                       <a href="https://docs.google.com/document/d/1sQsbVy-X8NKjomtZVE3byyCNzQKn9_nP7jZwFnsLIg0/edit?usp=sharing" target="_blank" class="btn">Resume</a>
+                       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=danielberg313@gmail.com" target="_blank" class="btn">Hire Me Now!</a>
+                    </div>
+
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/dj-berg/" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://github.com/dj-berg" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
+                        <a href="https://www.instagram.com/djberg_13/" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100089312988036" target="_blank" rel="noopener noreferrer"><i class='bx bxl-facebook'></i></a>
+                    </div>
+                </div>
+
+                <!-- profile image moved into content (no blob) -->
+                <!-- removed animated liquid blob from home (mobile-only) -->
+
+                <!-- desktop-only hero image + blob (hidden on mobile) -->
+                <div class="home-img desktop-only">
+                    <div class="img-box">
+                        <img src="IMG_2327-removebg-preview.png" alt="Daniel Berg">
+                        <div class="liquid-shape" aria-hidden="true">
+                            <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" width="100%" aria-hidden="true">
+                              <path fill="#12f7ff" d="M421.8,291.7Q393,333,368,372Q343,411,296.5,444Q250,477,212,429.5Q174,382,130.5,363Q87,344,85.5,297Q84,250,63,190Q42,130,103,115.5Q164,101,207,79Q250,57,288,88Q326,119,383.5,129.5Q441,140,466,195Q491,250,421.8,291.7Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+        </section>
+
+        <!-- typed init -->
+
+            <section id="about" class="about">
+                <div class="img-about">
+                    <div class="info-row">
+                      <div class="info-about1">
+                          <h2>1+</h2>
+                          <p>Years of Experience</p>
+                      </div>
+                      <div class="info-about2">
+                          <h2>3+</h2>
+                          <p>Happy Clients</p>
+                      </div>
+                      <div class="info-about3">
+                          <h2>5+</h2>
+                          <p>Completed Projects</p>
+                      </div>
+                    </div>
+                    <img src="blobport-removebg-preview.png" alt="">
+                </div>
+
+                <div class="about-content">
+                    <span>Let Me Introduce Myself</span>
+                    <h2>Engineer of Tomorrow's Technology</h2>
+                    <p>
+                        I’m Daniel J. Berg, a computer science student at Arizona State University passionate about building impactful software. I specialize in full-stack development, cloud computing, 
+                        and AI & machine learning, and I’m focused on creating projects that make a difference. My goal is to grow as a software engineer, contribute to meaningful projects, 
+                        and secure an internship that brings me closer to becoming one of Arizona’s top software engineers.
+                </p>
+                </div>
+            </section>
+
+            <section id="services" class="services">
+  <div class="main-text">
+    <span>What I will do for you</span>
+    <h2>My Services</h2>
+  </div>
+
+  <div class="section-services">
+
+    <!-- SERVICE 1 -->
+    <div class="service-box">
+      <div class="service-circle">
+        <!-- STACK ICON -->
+        <svg viewBox="0 0 24 24" class="service-icon" aria-hidden="true">
+          <path d="M12 2 2 7l10 5 10-5-10-5Zm0 7.2L5.3 7 12 3.8 18.7 7 12 9.2ZM2 12l10 5 10-5v2l-10 5-10-5v-2Zm0 6 10 5 10-5v2l-10 5-10-5v-2Z"/>
+        </svg>
+      </div>
+
+      <h3>Full-Stack Development</h3>
+      <p>
+        I build complete web applications from frontend interfaces to backend services,
+        integrating databases, APIs, and responsive design with clean, maintainable code.
+      </p>
+    </div>
+
+    <!-- SERVICE 2 -->
+    <div class="service-box">
+      <div class="service-circle">
+        <!-- ROBOT ICON -->
+        <svg viewBox="0 0 24 24" class="service-icon" aria-hidden="true">
+          <path d="M11 2h2v2.1a6.9 6.9 0 0 1 5.9 5.9H21a2 2 0 0 1 2 2v6a4 4 0 0 1-4 4H5a4 4 0 0 1-4-4v-6a2 2 0 0 1 2-2h2.1A6.9 6.9 0 0 1 11 4.1V2Zm1 4a5 5 0 0 0-5 5v1H3v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-4v-1a5 5 0 0 0-5-5Zm-3 7a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>
+        </svg>
+      </div>
+
+      <h3>AI & Machine Learning Solutions</h3>
+      <p>
+        I develop intelligent systems that analyze data, identify patterns, and generate
+        predictions using practical machine learning and statistical techniques.
+      </p>
+    </div>
+
+    <!-- SERVICE 3 -->
+    <div class="service-box">
+      <div class="service-circle">
+        <!-- CLOUD ICON -->
+        <svg viewBox="0 0 24 24" class="service-icon" aria-hidden="true">
+          <path d="M7.5 18A4.5 4.5 0 0 1 7 9.03 6 6 0 0 1 18.6 8.7 4.4 4.4 0 0 1 19 17.5c-.2.3-.6.5-1 .5H7.5Z"/>
+        </svg>
+      </div>
+
+      <h3>Cloud & Scalable Applications</h3>
+      <p>
+        I deploy and manage applications on cloud platforms, focusing on scalability,
+        reliability, environment configuration, and production-ready deployment.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+            <section id="skills" class="skills">
+                <div class="main-text">
+                      <span>Technical and Professional</span>
+                        <h2>My Skills</h2>
+                </div>
+
+                <div class="skill-main">
+                    <div class="skill-left">
+                        <h3>Technical Skills</h3>
+                        <div class="skill-bar">
+                            <div class="info">
+                                <p>Python</p>
+                                <p>90%</p>
+                            </div>
+                            <div class="bar">
+                                <span class="python"></span>
+                            </div>
+                        </div>
+
+                        <div class="skill-bar">
+                            <div class="info">
+                                <p>JavaScript</p>
+                                <p>75%</p>
+                            </div>
+                            <div class="bar">
+                                <span class="javascript"></span>
+                            </div>
+                        </div>
+
+                        <div class="skill-bar">
+                            <div class="info">
+                                <p>Java</p>
+                                <p>84%</p>
+                            </div>
+                            <div class="bar">
+                                <span class="java"></span>
+                            </div>
+                        </div>
+
+                         <div class="skill-bar">
+                            <div class="info">
+                                <p>C/C++</p>
+                                <p>82%</p>
+                            </div>
+                            <div class="bar">
+                                <span class="c"></span>
+                            </div>
+                        </div>
+
+                        <div class="skill-bar">
+                            <div class="info">
+                                <p>HTML</p>
+                                <p>87%</p>
+                            </div>
+                            <div class="bar">
+                                <span class="html"></span>
+                            </div>
+                        </div>
+
+                        <div class="skill-bar">
+                            <div class="info">
+                                <p>CSS</p>
+                                <p>83%</p>
+                            </div>
+                            <div class="bar">
+                                <span class="css"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                        <div class="skill-right">
+                            <h3>Professional Skills</h3>
+                            <div class="professional">
+        
+                    <div class="box">
+                        <div class="circular-progress" data-progress="93">
+                     <svg>
+                        <circle cx="60" cy="60" r="54"></circle>
+                        <circle cx="60" cy="60" r="54"></circle>
+                    </svg>
+                        <div class="progress-value">98%</div>
+                    </div>
+                        <div class="text">
+                        <small>Communication</small>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="circular-progress" data-progress="90">
+                    <svg>
+                        <circle class="bg-ring" cx="60" cy="60" r="54"></circle>
+                        <circle class="progress-ring" cx="60" cy="60" r="54"></circle>
+                        <circle class="dash-ring" cx="60" cy="60" r="54"></circle>
+                    </svg>
+                        <div class="progress-value">95%</div>
+                    </div>
+                    <div class="text">
+                    <small>Problem-Solving</small>
+                    </div>
+                </div>
+
+                    <div class="box">
+                        <div class="circular-progress" data-progress="87">
+                        <svg>
+                            <circle class="bg-ring" cx="60" cy="60" r="54"></circle>
+                            <circle class="progress-ring" cx="60" cy="60" r="54"></circle>
+                            <circle class="dash-ring" cx="60" cy="60" r="54"></circle>
+                        </svg>
+                            <div class="progress-value">91%</div>
+                        </div>
+                            <div class="text">
+                            <small>Adaptability</small>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                        <div class="circular-progress" data-progress="92">
+                    <svg>
+                        <circle class="bg-ring" cx="60" cy="60" r="54"></circle>
+                        <circle class="progress-ring" cx="60" cy="60" r="54"></circle>
+                        <circle class="dash-ring" cx="60" cy="60" r="54"></circle>
+                    </svg>
+                        <div class="progress-value">97%</div>
+                        </div>
+                        <div class="text">
+                            <small>Teamwork</small>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+            <section id="portfolio" class="portfolio">
+    <div class="main-text">
+        <span>What I’ve Built</span>
+        <h2>Latest Projects</h2>
+    </div>
+
+    <div class="portfolio-container">
+
+        <!-- featured project -->
+        <div class="portfolio-item featured-project">
+           <h3 class="portfolio-title">Full-Stack Task Management Web Application</h3>
+            <a href="https://your-top-project-link.com" target="_blank" class="portfolio-image-link">
+                <img src="Copilot_20251211_233908.png" alt="Featured Project">
+            </a>
+            <p class="portfolio-description">
+                Building a full-stack task management platform using React, JavaScript, HTML, and CSS with a Node.js and Python based
+                backend exposing RESTful APIs. The system supports secure user authentication, task creation and tracking, and persistent
+                 storage with MongoDB, emphasizing clean UI/UX design and responsive interactions. Integrates data visualizations to 
+                 display productivity trends and task completion metrics, with planned AI/ML features for task prioritization and insights.
+                  Deployed using AWS cloud services, demonstrating experience with scalable infrastructure, security fundamentals, and 
+                  modern full-stack architecture.
+            </p>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="portfolio-item featured-project">
+           <h3 class="portfolio-title">Short-Term Stock Prediction & Analytics Dashboard</h3>
+            <a href="https://www.danieljbergstockpredictor.com/" target="_blank" class="portfolio-image-link">
+                <img src="Capture.PNG" alt="Project 2">
+            </a>
+            <p class="portfolio-description">
+                Developed a full-stack stock analysis and prediction web application using React, JavaScript, HTML, and CSS with a Python
+                 (Flask) REST API backend. The platform retrieves live and historical stock ticker data via yfinance, generates short-term
+                  price predictions using a trained Linear Regression model, and presents results through an intuitive, responsive UI. 
+                  Implemented a sliding ticker animation displaying real-time price movement with percentage changes and directional 
+                  indicators, and deployed the application on Vercel, demonstrating full ownership from data ingestion and modeling to 
+                  API design and production deployment.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+            <section class="contact" id="contact">
+    <div class="contact-container">
+        <h2>Contact Me</h2>
+        <span>Let's Talk</span>
+    </div>
+
+    <!-- contact form -->
+    <form class="contact-form" id="contact-form">
+        <input type="text" name="from_name" placeholder="First & Last Name" required>
+        <input type="email" name="from_email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <textarea name="message" rows="14" placeholder="Message" required></textarea>
+
+        <!-- honeypot -->
+        <input type="text" name="company" style="display:none">
+
+        <div class="formBtn">
+            <button type="submit" class="btn">Send Message</button>
+        </div>
+    </form>
+
+    <!-- status -->
+    <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+</section>
+
+        
+            <footer>
+                <p>© 2025 Daniel J. Berg | Built with JavaScript, HTML, & CSS | All Rights Reserved</p>
+            </footer>
+        <!-- external libs -->
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <script src = "mixitup.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
