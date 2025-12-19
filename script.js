@@ -1,6 +1,14 @@
-/* app logic */
+/* =====================================================
+   # APP LOGIC
+   ===================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    /* =====================================================
+       # NAV HEADER
+       - Active link highlighting
+       - Sticky header behavior
+       ===================================================== */
 
     /* nav header */
     const menuLinks = document.querySelectorAll("header ul li a");
@@ -58,10 +66,18 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('resize', handleScroll);
     window.addEventListener('hashchange', handleScroll);
 
+    /* =====================================================
+       # EMAILJS INITIALIZATION
+       ===================================================== */
+
     // init emailjs
     if (window.emailjs && typeof emailjs.init === 'function') {
         emailjs.init("VkVXmCBWffsrQg6wy");
     }
+
+    /* =====================================================
+       # MOBILE / DESKTOP NAV MENU
+       ===================================================== */
 
     // mobile menu toggle (desktop: inline, mobile: sidebar)
     const menuIcon = document.getElementById('menu-icon');
@@ -136,6 +152,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }));
     }
 
+    /* =====================================================
+       # ABOUT SECTION TOGGLE
+       ===================================================== */
+
     /* about toggle */
     const toggleBtn = document.getElementById("toggleAboutBtn");
     const moreText = document.querySelector(".about-content .more-text");
@@ -147,6 +167,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 moreText.classList.contains("show") ? "Show Less" : "Read More";
         });
     }
+
+    /* =====================================================
+       # SKILL CIRCLE PROGRESS
+       ===================================================== */
 
     /* skill circles */
     document.querySelectorAll(".circular-progress").forEach(circle => {
@@ -161,6 +185,10 @@ document.addEventListener("DOMContentLoaded", () => {
         svgCircle.style.strokeDashoffset =
             circumference - (progress / 100) * circumference;
     });
+
+    /* =====================================================
+       # RAIN + LIGHTNING BACKGROUND EFFECTS
+       ===================================================== */
 
     /* rain + lightning */
     (function initRain() {
@@ -270,6 +298,10 @@ document.addEventListener("DOMContentLoaded", () => {
         })();
     })();
 
+    /* =====================================================
+       # TYPED.JS HERO TEXT
+       ===================================================== */
+
     /* typed init */
     if (window.Typed) {
         const titles = [
@@ -311,6 +343,10 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    /* =====================================================
+       # CONTACT FORM SUBMISSION
+       ===================================================== */
 
     /* contact form */
     const form = document.getElementById("contact-form");

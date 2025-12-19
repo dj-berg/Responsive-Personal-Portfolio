@@ -1041,16 +1041,21 @@ section {
 @media (max-width: 420px) {
   /* header visibility */
   header{
-    padding: 0.5rem 6%;
+    padding: 0.6rem 6%;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 10050;
     background-color: rgba(81,28,167,0.98);
-    height: 56px;
+    height: auto; /* allow header to grow when links stack */
     display: flex;
+    flex-direction: column; /* logo on top, nav below */
     align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
   /* mobile base font smaller */
   body{ font-size: 14px }
@@ -1060,37 +1065,49 @@ section {
   .logo{
     font-size:1.05rem;
     font-weight: 700;
-    letter-spacing: -0.03em; /* tighter */
+    letter-spacing: -0.03em;
     line-height: 1;
-    margin-right: 6px;
+    margin-right: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    order: 1;
+    white-space: nowrap; /* keep 'Daniel.' together */
   }
   .logo span{
-    margin-right: 4px; /* tighter initial */
-    font-size: 0.98rem;
+    margin-right: 0;
+    font-size: 1rem;
     vertical-align: baseline;
     font-weight: 700;
+    display: inline-block;
   }
-  #menu-icon{ display: block; z-index:10060; margin-left:4px }
+  /* hide the hamburger on small screens since nav links are shown inline */
+  #menu-icon{ display: none; z-index:10060; margin-left:4px }
 
-  /* header layout: hamburger left, logo right on mobile */
+  /* header layout adjusted for mobile: show nav links inline, logo placed statically */
   header{ justify-content: space-between; gap: 6px; padding-left: 8px; padding-right: 8px }
-  /* hamburger: absolute top-left for mobile */
-  #menu-icon{ order: 1; margin-left: 0; margin-right: 0; position: absolute; left: 6px; top: 12px; z-index: 10062 }
-  /* logo: absolute top-right for mobile - pushed left a bit and appears as one word */
-  .logo{ order: 2; margin-left: 0; position: absolute; right: 28px; top: 12px; z-index: 10061; letter-spacing: -0.01em; word-spacing: 0 }
+  /* hamburger hidden on mobile (not needed when nav links are visible) */
+  #menu-icon{ order: 1; margin-left: 0; margin-right: 0; position: absolute; left: 6px; top: 12px; z-index: 10062; display: none; }
+  /* logo: static positioning so nav items can flow naturally */
+  .logo{ order: 1; margin-left: 0; position: static; right: auto; top: auto; z-index: 10061; letter-spacing: -0.01em; word-spacing: 0 }
   .logo span{ margin-right: 0; display: inline-block }
 
   .navlist{
-    display: none;
-    position: absolute;
-    top: 8px;
-    left: 64px; /* only used for inline layout; sidebar will be fixed */
+    display: flex;
+    order: 2;
+    width: 100%;
+    position: static;
+    top: auto;
+    left: auto;
     right: auto;
     background: transparent;
     flex-direction: row;
-    gap: 0.35rem;
+    gap: 10px;
     padding: 0;
     align-items: center;
+    justify-content: center; /* center the links on a second line */
+    flex-wrap: wrap; /* allow wrapping/stacking nicely */
+    margin-top: 6px;
   }
 
   /* make anchors scroll to visible area (no content hidden under header) */
@@ -1163,8 +1180,21 @@ section {
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   }
 
-  .navlist a{ padding: 4px 8px; display: block; font-size: 0.92rem; white-space: nowrap }
-  .navlist a:hover{ text-decoration: underline }
+  .navlist a{
+    padding: 6px 10px;
+    display: inline-block;
+    font-size: 0.92rem;
+    white-space: nowrap;
+    border-radius: 6px;
+    color: #fff;
+    background: rgba(255,255,255,0.02);
+    transition: background 150ms ease, transform 100ms ease;
+  }
+  .navlist a:hover{
+    background: rgba(255,255,255,0.04);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
 
   /* sidebar brand (shown inside sidebar) */
   .nav-list .nav-brand, .nav-brand{ display: none }
