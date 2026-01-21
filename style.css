@@ -66,6 +66,9 @@ body{
     padding-top: 80px;
 }
 
+/* ensure the inline profile image added in HTML is mobile-only by default */
+.profile-inline { display: none !important; }
+
 #rain-canvas {
     position: fixed;
     top: 0;
@@ -1022,8 +1025,15 @@ section {
 /* portfolio titles blue */
 .portfolio-title {
     color: var(--hover-color);
-    font-weight: 700;
-    margin: 0.6rem 0 0.4rem;
+        font-weight: 600;
+        margin: 0.6rem 0 0.4rem;
+        font-size: 1rem; /* reduced size */
+}
+
+@media (max-width: 767px) {
+    .portfolio-title {
+        font-size: 0.95rem; /* reduce on mobile */
+    }
 }
 
 /* image link */
@@ -2005,3 +2015,104 @@ footer a i {
         box-shadow: var(--neon-box-shadow);
     }
 }
+
+/* ==========================
+     MOBILE ENHANCEMENTS
+     - Responsive type scaling
+     - Tighter spacing for small screens
+     - Ensure buttons, images, and hero layout are visually consistent
+     ========================== */
+
+:root{
+        --big-font: clamp(1.6rem, 4.5vw, 2.5rem);
+        --norma-font: clamp(1.05rem, 2.9vw, 2rem);
+        --h2-font: clamp(1.4rem, 5.2vw, 3rem);
+}
+
+/* medium screens: keep desktop look but scale down gaps */
+@media (max-width: 1024px) {
+    body { padding-top: 64px; }
+    header { padding: 0.8rem 6%; }
+    .home { grid-template-columns: 1fr; padding: 64px 6% 28px; }
+    .home-content { max-width: 720px; }
+    .img-box { transform: none; }
+}
+
+/* final mobile polish (keeps desktop styling but stacked and scaled) */
+@media (max-width: 767px) {
+    body { font-size: 14px; padding-top: 64px; }
+    /* give header more breathing room on phones */
+    header { padding: 1rem 6%; }
+    .logo { font-size: 1.25rem; gap: 0; white-space: nowrap; }
+    .logo span { font-size: 1.25rem; line-height: 1; }
+    .navlist { gap: 8px; }
+
+    /* Hero */
+    /* more vertical breathing room between header and hero; more spacing between home elements */
+    .home { display: flex; flex-direction: column; align-items: center; padding: 120px 5% 40px; gap: 1.4rem; }
+    .home-content { width: 100%; max-width: 700px; text-align: center; }
+    .home-content h1 { font-size: clamp(1.2rem, 7.2vw, 1.8rem); line-height: 1.12; margin-bottom: 0; }
+    .change-text { font-size: clamp(1rem, 4.2vw, 1.1rem); }
+    .home-content p { max-width: 56ch; margin: 0.8rem auto; }
+
+    /* Buttons & socials: center, full-width friendly */
+    /* make primary CTA buttons bigger and fuller on mobile */
+    .btn-box { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 0.9rem; align-items: stretch; margin-top: 0.8rem; margin-bottom: 1.8rem; }
+    .btn-box .btn { width: 100%; max-width: none; height: 64px; font-size: 1.12rem; padding: 0 1rem; border-radius: 12px; justify-content: center; }
+    /* center social icons row and keep four icons on one line */
+    .social-icons { width: 100%; max-width: 220px; display: flex; justify-content: space-between; flex-wrap: nowrap; margin: 0.6rem auto 0; }
+    .social-icons a { width: 44px; height: 44px; }
+
+    /* Hero image: keep below content and nicely scaled */
+    /* hide desktop-only hero image on mobile (we use the inline profile image instead) */
+    .home-img.desktop-only { display: none !important; }
+    .home-img { order: 2; display: block; margin: 8px auto 0; max-width: 320px; }
+    .img-box { max-width: 320px; margin: 0 auto; }
+    /* reset any large negative offset coming from desktop styles and pull photo much closer to social icons */
+    .img-box img { position: relative !important; top: 0 !important; margin: 0.05rem auto 0; max-width: 320px; height: auto; border-radius: 12px; z-index: 1; }
+
+    /* show inline profile image between typed line and paragraph (pulled much closer) */
+    .profile-inline { display: block !important; margin: -6rem auto 0.4rem; }
+    /* make inline profile photo as large as the content area on mobile and pull it up under the heading */
+    .profile-inline img { width: 100%; max-width: 420px; display: block; margin: -5rem auto 0.6rem; }
+
+    /* ensure home text has more space above buttons */
+    .home-content p { margin-bottom: 1.4rem; }
+
+    /* slightly smaller about info circles on mobile for better balance */
+    .img-about .info-row .info-about1,
+    .img-about .info-row .info-about2,
+    .img-about .info-row .info-about3 {
+        width: 84px;
+        height: 84px;
+        padding: 8px;
+        border-radius: 50%;
+    }
+
+    .img-about .info-row .info-about1 h2,
+    .img-about .info-row .info-about2 h2,
+    .img-about .info-row .info-about3 h2 {
+        font-size: 1.05rem;
+        line-height: 1;
+    }
+
+    /* About: stacked but visually similar */
+    .about { padding: 48px 5%; gap: 1rem; }
+    .about-content h2 { font-size: clamp(1.1rem, 6vw, 1.6rem); }
+    .img-about img { max-width: 220px; }
+
+    /* Portfolio: images scale down but keep rounded cards */
+    .portfolio-item img { height: auto; max-height: 260px; border-radius: 16px; }
+
+    /* Skills/professional: stack and center */
+    .skill-main { grid-template-columns: 1fr; gap: 1.2rem; }
+    .professional { grid-template-columns: 1fr; gap: 1.6rem; }
+
+    /* Contact form narrower on phones */
+    .contact-form { max-width: 420px; width: 100%; padding: 0 6px; }
+    .formBtn .btn { min-width: 160px; }
+
+    /* ensure decorative heavy visuals are disabled for battery and clarity */
+    #rain-canvas, .liquid-shape, .lightning { display: none !important; }
+}
+
